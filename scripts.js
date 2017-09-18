@@ -14,7 +14,7 @@ console.log(initialState);
 // REDUCER
 
 const reducer = (state = initialState, action) => {
-
+  return state;
 }
 
 const { expect } = window;
