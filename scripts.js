@@ -78,9 +78,12 @@ window.onload = function() {
 }
 
 const switchButtonClicked = () => {
-  console.log('click');
-  store.dispatch({ type: 'NEXT_LYRIC' });
-  console.log(store.getState());
+  const checkState = store.getState();
+  if (checkState.arrayPosition === checkState.chorusArray.length - 1) {
+    store.dispatch({ type: 'RESTART_SONG' } );
+  } else {
+    store.dispatch({ type: 'NEXT_LYRIC' } );
+  }
 }
 
 store.subscribe(render);
