@@ -14,7 +14,20 @@ console.log(initialState);
 // REDUCER
 
 const reducer = (state = initialState, action) => {
-  return state;
+  let newState;
+  switch (action.type) {
+    case 'NEXT_LYRIC':
+      let newPosition = state.arrayPosition + 1;
+      newState = {
+        chorusString: state.chorusString,
+        chorusArray: state.chorusArray,
+        arrayPosition: newPosition,
+        currentPhrase: state.chorusArray[newPosition]
+      }
+      return newState;
+    default:
+      return state;
+  }
 }
 
 const { expect } = window;
