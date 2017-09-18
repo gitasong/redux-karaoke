@@ -13,9 +13,17 @@ console.log(initialState);
 
 // REDUCER
 
+const reducer = (state = initialState, action) => {
+
+}
+
 const { expect } = window;
 
 // UNIT TESTS
+
+expect(
+  reducer(initialState, { type: null })
+).toEqual(initialState);
 
 const { createStore } = Redux;
 const store = createStore(reducer);
