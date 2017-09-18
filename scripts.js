@@ -60,7 +60,7 @@ window.onload = function() {
   render();
 }
 
-const userClick = () => {
+const switchButtonClicked = () => {
   console.log('click');
   store.dispatch({ type: 'NEXT_LYRIC' });
   console.log(store.getState());
