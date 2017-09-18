@@ -25,6 +25,15 @@ expect(
   reducer(initialState, { type: null })
 ).toEqual(initialState);
 
+expect(
+  reducer(initialState, { type: 'NEXT_LYRIC' })
+).toEqual({
+  chorusString: chorus,
+  chorusArray: chorusArray,
+  arrayPosition: 1,
+  currentPhrase: chorusArray[1]
+});
+
 const { createStore } = Redux;
 const store = createStore(reducer);
 console.log(store.getState());
