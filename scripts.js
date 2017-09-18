@@ -1,6 +1,7 @@
 const chorus = "Don't want to be a fool for you, Just another player in your game for two, You may hate me but it ain't no lie, Baby bye bye bye, Bye bye, I Don't want to make it tough, I just want to tell you that I've had enough, It might sound crazy but it ain't no lie, Baby bye bye bye";
 
 const chorusArray = chorus.split(', ');
+let position = 0;
 
 const initialState = {
   chorus: chorus,
@@ -21,8 +22,8 @@ const reducer = (state = initialState, action) => {
       newState = {
         chorusString: state.chorusString,
         chorusArray: state.chorusArray,
-        arrayPosition: newPosition,
-        currentPhrase: state.chorusArray[newPosition]
+        arrayPosition: 0,
+        currentPhrase: state.chorusArray[0]
       }
       return newState;
     default:
@@ -51,6 +52,18 @@ const { createStore } = Redux;
 const store = createStore(reducer);
 console.log(store.getState());
 
+const render = () => {
+  document.getElementById('words').innerHTML = store.getState().currentPhrase;
+}
+
+window.onload = function() {
+  render();
+}
+
 const userClick = () => {
   console.log('click');
+  store.dispatch({ type: 'NEXT_LYRIC' });
+  console.log(store.getState());
 }
+
+store.subscribe(render);
