@@ -26,6 +26,14 @@ const reducer = (state = initialState, action) => {
         currentPhrase: state.chorusArray[newPosition]
       }
       return newState;
+    case 'RESTART_SONG' :
+      newState = {
+        chorusString: state.chorusString,
+        chorusArray: state.chorusArray,
+        arrayPosition: 0,
+        currentPhrase: state.chorusArray[0]
+      }
+      return newState;
     default:
       return state;
   }
