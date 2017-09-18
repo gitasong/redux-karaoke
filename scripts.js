@@ -5,8 +5,8 @@ const chorusArray = chorus.split(', ');
 const initialState = {
   chorus: chorus,
   chorusArray: chorusArray,
-  position: 0,
-  currentPhrase: chorusArray[0]
+  position: position,
+  currentPhrase: chorusArray[position]
 }
 
 console.log(initialState);
