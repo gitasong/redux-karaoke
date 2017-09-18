@@ -22,8 +22,8 @@ const reducer = (state = initialState, action) => {
       newState = {
         chorusString: state.chorusString,
         chorusArray: state.chorusArray,
-        arrayPosition: 0,
-        currentPhrase: state.chorusArray[0]
+        arrayPosition: newPosition,
+        currentPhrase: state.chorusArray[newPosition]
       }
       return newState;
     default:
