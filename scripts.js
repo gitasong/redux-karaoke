@@ -1,10 +1,10 @@
-const chorus = "Don't want to be a fool for you, Just another player in your game for two, You may hate me but it ain't no lie, Baby bye bye bye, Bye bye, I Don't want to make it tough, I just want to tell you that I've had enough, It might sound crazy but it ain't no lie, Baby bye bye bye";
+const chorusString = "Don't want to be a fool for you, Just another player in your game for two, You may hate me but it ain't no lie, Baby bye bye bye, Bye bye, I Don't want to make it tough, I just want to tell you that I've had enough, It might sound crazy but it ain't no lie, Baby bye bye bye";
 
-const chorusArray = chorus.split(', ');
+const chorusArray = chorusString.split(', ');
 let position = 0;
 
 const initialState = {
-  chorus: chorus,
+  chorusString: chorusString,
   chorusArray: chorusArray,
   position: position,
   currentPhrase: chorusArray[position]
@@ -50,7 +50,7 @@ expect(
 expect(
   reducer(initialState, { type: 'NEXT_LYRIC' })
 ).toEqual({
-  chorusString: chorus,
+  chorusString: chorusString,
   chorusArray: chorusArray,
   arrayPosition: 1,
   currentPhrase: chorusArray[1]
@@ -58,7 +58,7 @@ expect(
 
 expect(
   reducer({
-    chorusString: chorus,
+    chorusString: chorusString,
     chorusArray: chorusArray,
     arrayPosition: 1,
     currentPhrase: chorusArray[1]
