@@ -6,7 +6,7 @@ let position = 0;
 const initialState = {
   chorusString: chorusString,
   chorusArray: chorusArray,
-  position: position,
+  arrayPosition: position,
   currentPhrase: chorusArray[position]
 }
 
